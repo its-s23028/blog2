@@ -1,6 +1,6 @@
 import Hero from 'components/hero'
 
 const Home = () => {
-  return <Hero />
+  return <Hero title='CUBE' subtitle='アウトプットしてくサイト' />
 }
 export default Home
