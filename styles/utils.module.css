@@ -19,7 +19,7 @@
 }
 
 /* 横並び（中央揃い）*/
-.sideBydeCenter {
+.sideBySideCenter {
   composes: sideBySide;
   align-items: center;
   text-align: center;
