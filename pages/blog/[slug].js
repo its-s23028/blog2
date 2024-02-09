@@ -16,7 +16,7 @@ import { eyecatchLocal } from 'lib/constants'
 import { getPlaiceholder } from 'plaiceholder'
 import { getImageBuffer } from 'lib/getImageBuffer'
 
-const Schedule = ({
+const Post = ({
   title,
   publish,
   content,
@@ -66,8 +66,15 @@ const Schedule = ({
   )
 }
 
-const getStaticProps = async () => {
-  const slug = 'micro'
+export async function getStaticPaths () {
+  return {
+    paths: ['/blog/schedule', '/blog/music', '/blog/micro'],
+    fallback: false
+  }
+}
+
+const getStaticProps = async context => {
+  const slug = context.params.slug
 
   const post = await getPostBySlug(slug)
 
@@ -91,5 +98,5 @@ const getStaticProps = async () => {
   }
 }
 
-export default Schedule
+export default Post
 export { getStaticProps }
